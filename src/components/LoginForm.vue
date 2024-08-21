@@ -19,8 +19,8 @@ import {validateEmail} from '@/utils/validation'
 export default {
   data() {
     return {
-      username: '',
-      password: '',
+      username: 'test0002@gmail.com',
+      password: 'test0002@gmail.com',
       logMessage: '',
     }
   },
@@ -36,8 +36,10 @@ export default {
           username: this.username,
           password: this.password,
         } 
-        const { data } = await loginUser(userData)
-        this.logMessage = `${data.user.nickname}님이 로그인 되었습니다`        
+        const { data } = await loginUser(userData)        
+        this.$store.commit('setUsername', data.user.username )
+        this.initForm()
+        this.$router.push('/main')        
       }catch(error){
         this.logmessage=error.response.data
       }finally{
