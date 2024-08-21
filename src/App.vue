@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div>{{ $store.state.count }}</div>
     <AppHeader></AppHeader>
-    <RouterView />
+    <main>
+      <RouterView />
+    </main>
   </div>
 </template>
 <script>
@@ -16,4 +18,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.wrapper{width:500px;margin:0 auto;}
+main{padding:10px;}
+
+</style>

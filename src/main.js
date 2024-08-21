@@ -1,4 +1,4 @@
-import './assets/main.css'
+import './css/reset.css'
 import { createApp } from 'vue'
 
 import { store } from './store/index'

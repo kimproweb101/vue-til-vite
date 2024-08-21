@@ -3,7 +3,8 @@ import { createStore } from 'vuex'
 export const store = createStore({
   state () {
     return {
-      username:''
+      username:'',
+      token:'',
     }
   },
   getters:{
@@ -17,6 +18,9 @@ export const store = createStore({
     },
     clearUsername(state){
       state.username='';
+    },
+    setToken(state,token){
+      state.token=token
     }
   }
 })

@@ -1,15 +1,23 @@
-import axios from 'axios'
+import axios from 'axios';
+import { setInterceptors } from './common/interceptors';
 
-const instance=axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+// 액시오스 초기화 함수
+function createInstance() {
+  const instance = axios.create({
+    baseURL: import.meta.env.VITE_API_URL,
+  });
+  return setInterceptors(instance);
+}
+const instance = createInstance();
 
-function registerUser(userData){  
-  return instance.post('signup', userData)
+// 회원가입 API
+function registerUser(userData) {
+  return instance.post('signup', userData);
 }
 
-function loginUser(userData){  
-  return instance.post('login',userData);
+// 로그인 API
+function loginUser(userData) {
+  return instance.post('login', userData);
 }
 
-export {registerUser,loginUser}
+export { registerUser, loginUser };
