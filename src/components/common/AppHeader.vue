@@ -1,18 +1,24 @@
 <template>
   <header>
-    <h1><router-link to="/">LOGO</router-link></h1>    
-    <template v-if="isUserLogin">
-      <div>
-        <span>{{ $store.state.username }}</span>
-        <button type="button" @click="logoutUser">로그아웃</button>
-      </div>
-    </template>
-    <template v-else>
-      <div>
-        <router-link to="/login">{{ $store.state.username }}로그인</router-link>
+    <div>
+      <router-link :to="logoLink" class="logo">
+        TIL
+        <span v-if="isUserLogin">by {{ $store.state.username }}</span>
+      </router-link>
+    </div>
+    <div class="navigations">
+      <!-- 1 -->
+      <template v-if="isUserLogin">
+        <a href="javascript:;" @click="logoutUser" class="logout-button">
+          Logout
+        </a>
+      </template>
+      <!-- 2 -->
+      <template v-else>
+        <router-link to="/login">로그인</router-link>
         <router-link to="/signup">회원가입</router-link>
-      </div>
-    </template>
+      </template>
+    </div>
   </header>
 </template>
 <script>

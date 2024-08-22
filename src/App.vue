@@ -1,10 +1,9 @@
 <template>
-  <div class="wrapper">
-    <div>{{ $store.state.count }}</div>
+  <div class="app">
     <AppHeader></AppHeader>
-    <main>
+    <div class="app-contents">
       <RouterView />
-    </main>
+    </div>
   </div>
 </template>
 <script>

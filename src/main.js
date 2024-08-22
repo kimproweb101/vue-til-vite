@@ -1,4 +1,5 @@
 import './css/reset.css'
+import './css/common.css'
 import { createApp } from 'vue'
 
 import { store } from './store/index'

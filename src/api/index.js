@@ -20,4 +20,12 @@ function loginUser(userData) {
   return instance.post('login', userData);
 }
 
-export { registerUser, loginUser };
+// 학습 노트 데이터 조회 API
+function fetchPosts(){
+  return instance.get('posts')
+}
+
+
+
+
+export { registerUser, loginUser, fetchPosts };
