@@ -14,9 +14,7 @@
 </template>
 
 <script>
-import { loginUser } from '@/api/index.js';
 import {validateEmail} from '@/utils/validation'
-import {saveAuthToCookie, saveUserToCookie} from '@/utils/cookies'
 
 export default {
   data() {
@@ -38,14 +36,9 @@ export default {
           username: this.username,
           password: this.password,
         } 
-        const { data } = await loginUser(userData)      
-        console.log(data.token)  
-        this.$store.commit('setUsername', data.user.username )
-        this.$store.commit('setToken', data.token)
-        saveAuthToCookie(data.token)
-        saveUserToCookie(data.user.username)
-        this.initForm()
-        this.$router.push('/main')        
+        await this.$store.dispatch('LOGIN', userData)
+        this.initForm()        
+        this.$router.push('/main')
       }catch(error){
         this.logmessage=error.response.data
       }finally{

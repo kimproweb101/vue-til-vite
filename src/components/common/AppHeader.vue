@@ -1,7 +1,7 @@
 <template>
   <header>
     <div>
-      <router-link :to="logoLink" class="logo">
+      <router-link to="/main" class="logo">
         TIL
         <span v-if="isUserLogin">by {{ $store.state.username }}</span>
       </router-link>
@@ -29,8 +29,7 @@ export default{
     }
   },
   methods:{
-    logoutUser(){
-      console.log('logoutUser')
+    logoutUser(){      
       this.$store.commit('clearUsername')
       this.$router.push('/login')
     }
