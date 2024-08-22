@@ -18,7 +18,5 @@ export default {
 </script>
 
 <style scoped>
-.wrapper{width:500px;margin:0 auto;}
-main{padding:10px;}
 
 </style>
