@@ -48,7 +48,8 @@ export default {
           contents:this.contents
         }
         await createPost(postData) 
-        this.logMessage='글이 등록 되었습니다.'        
+        this.logMessage='글이 등록 되었습니다.'
+        this.$router.push('/main')
       }catch(error){        
         this.logMessage=error.response.data.message
       }
