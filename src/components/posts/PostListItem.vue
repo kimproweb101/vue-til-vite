@@ -8,7 +8,7 @@
     </div>
     <div class="post-time">
       {{ postItem.createdAt }}      
-      <i class="icon ion-md-create"></i>
+      <i class="icon ion-md-create" @click="routeEditPage(postItem._id)"></i>
       <i class="icon ion-md-trash" @click="deleteItem"></i>      
     </div>
   </li>
@@ -33,6 +33,9 @@ export default{
         }
       }
     },
+    routeEditPage(postId){
+      this.$router.push(`/post/${postId}`)
+    }
   }
 }
 </script>
