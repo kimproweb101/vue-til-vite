@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'main',
       component: () => import('@/views/MainPage.vue')
     },
+    {
+      path: '/add',
+      name: 'add',
+      component: () => import('@/views/PostAddPage.vue')
+    },
     { path: '/:pathMatch(.*)*', 
       name: 'NotFound', 
       component: () => import('@/views/NotFoundPage.vue')

@@ -7,6 +7,7 @@
         <PostListItem v-for="postItem in postItems" :key="postItem._id" :postItem="postItem"></PostListItem>
       </ul>    
     </div>
+    <router-link to="/add" class="create-button"><i class="ion-md-add"></i></router-link>
   </div>
 </template>
 <script>
@@ -31,9 +32,8 @@ export default {
       try{
         this.isLoading=true;
         const {data}=await fetchPosts()
-        console.log(data)
-        this.postItems=data.posts
-        this.isLoading=false;              
+        this.isLoading=false;
+        this.postItems=data.posts        
       }catch(err){
         console.log(err)
       }
