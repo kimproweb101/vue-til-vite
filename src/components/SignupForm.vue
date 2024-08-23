@@ -20,7 +20,7 @@
 </template>
 <script>
 import {validateEmail} from '@/utils/validation'
-import { registerUser } from '@/api/index.js';
+import { registerUser } from '@/api/auth.js';
 export default {
   data() {
     return {

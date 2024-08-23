@@ -1,7 +1,7 @@
 
 import { createStore } from 'vuex'
 import {getAuthFromCookie, getUserFromCookie,saveAuthToCookie,saveUserToCookie} from '@/utils/cookies.js';
-import {loginUser} from '@/api/index'
+import {loginUser} from '@/api/auth'
 
 
 export const store = createStore({

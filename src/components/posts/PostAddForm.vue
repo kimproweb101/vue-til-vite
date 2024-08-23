@@ -21,7 +21,7 @@
   </div> 
 </template>
 <script>
-import {createPost} from '@/api/index.js'
+import {createPost} from '@/api/posts.js'
 export default {
   components: {},
   data() {
