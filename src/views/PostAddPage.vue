@@ -1,5 +1,4 @@
-<template>
-  <h1>생성 페이지</h1>
+<template>  
   <PostAddForm></PostAddForm>
 </template>
 <script>
